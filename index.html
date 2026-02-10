@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PokéShield — Protections pour cartes Pokémon</title>
+  <meta name="description" content="Classeur, sleeves, top loaders et acryliques premium pour protéger tes cartes Pokémon." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#">
+          <span class="logo">PS</span>
+          <span>PokéShield</span>
+        </a>
+
+        <div class="searchbar" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="searchInput" type="search" placeholder="Rechercher : sleeves, classeur, acrylique…" />
+        </div>
+
+        <nav class="nav-links" aria-label="Navigation">
+          <a href="#produits">Produits</a>
+          <a href="#livraison">Livraison</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <button class="pill" id="cartBtn" aria-haspopup="dialog" aria-controls="cartDrawer">
+          🛒 Panier <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <a class="pill primary" href="#produits">Voir les nouveautés ✨</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Présentation">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <h1>Protège tes cartes Pokémon comme un vrai collectionneur.</h1>
+          <p>
+            Sleeves premium, top loaders, boîtiers acryliques et classeurs.
+            Expédition rapide et matériaux sélectionnés pour éviter rayures, UV et poussière.
+          </p>
+
+          <div class="badges" aria-label="Avantages">
+            <span class="badge">✅ Sleeves sans PVC</span>
+            <span class="badge">🧊 Acrylique crystal-clear</span>
+            <span class="badge">📦 Livraison 48/72h</span>
+            <span class="badge">🔁 Retours 14 jours</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#produits">Découvrir les produits</a>
+            <button class="btn" id="focusSearch">Rechercher un produit</button>
+          </div>
+        </div>
+
+        <aside class="card hero-side" aria-label="Infos boutique">
+          <div class="side-item">
+            <h3>Protection UV & anti-rayures</h3>
+            <p>Idéal pour cartes gradées, promos et cartes vintage.</p>
+          </div>
+          <div class="side-item">
+            <h3>Bundle “Starter Shield”</h3>
+            <p>Sleeves + top loaders + team bag : le pack essentiel.</p>
+          </div>
+          <div class="side-item">
+            <h3>Paiement sécurisé</h3>
+            <p>CB / Apple Pay / PayPal (à brancher côté backend).</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="toolbar" id="produits" aria-label="Outils de filtrage">
+      <div class="filters">
+        <select id="categoryFilter" aria-label="Filtrer par catégorie">
+          <option value="all">Toutes catégories</option>
+          <option value="sleeves">Sleeves</option>
+          <option value="binders">Classeurs</option>
+          <option value="acrylic">Acrylique</option>
+          <option value="consumables">Consommables</option>
+        </select>
+
+        <select id="sortFilter" aria-label="Trier les produits">
+          <option value="featured">Trier : en vedette</option>
+          <option value="price-asc">Prix : croissant</option>
+          <option value="price-desc">Prix : décroissant</option>
+          <option value="name-asc">Nom : A → Z</option>
+        </select>
+      </div>
+
+      <div class="filters">
+        <span class="badge" id="resultsCount">0 produits</span>
+      </div>
+    </section>
+
+    <section class="grid" id="productGrid" aria-label="Liste des produits">
+      <!-- Injecté par JS -->
+    </section>
+
+    <section class="card section-card" id="livraison">
+      <h2>Livraison & retours</h2>
+      <p>
+        Livraison standard 48/72h (France). Offerte dès 49€.
+        Retours possibles sous 14 jours (produits non ouverts pour les consommables).
+      </p>
+    </section>
+
+    <section class="card section-card" id="faq">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Sleeves : standard ou perfect fit ?</summary>
+        <p>Perfect fit = ajusté à la carte. Standard = plus large. Double-sleeving = perfect fit + standard.</p>
+      </details>
+
+      <details>
+        <summary>Acrylique : pour cartes gradées ?</summary>
+        <p>Oui : certains boîtiers sont adaptés aux slabs (PSA/BGS/CGC). Vérifie la compatibilité dans la fiche produit.</p>
+      </details>
+
+      <details>
+        <summary>Top loader vs semi-rigide ?</summary>
+        <p>Top loader = rigide (stockage/transport). Semi-rigide = pratique pour envoi et manipulation.</p>
+      </details>
+    </section>
+  </main>
+
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Panier">
+    <div class="drawer-header">
+      <h3>Ton panier</h3>
+      <button class="btn" id="closeCart" aria-label="Fermer">✕</button>
+    </div>
+
+    <div class="drawer-body" id="cartBody">
+      <!-- Injecté par JS -->
+    </div>
+
+    <div class="drawer-footer">
+      <div class="totals">
+        <span>Total</span>
+        <strong id="cartTotal">0,00 €</strong>
+      </div>
+      <button class="btn primary" id="checkoutBtn">Passer commande</button>
+      <p class="small">
+        Démo front-end : le bouton “Passer commande” affiche un résumé.
+        Branche un vrai paiement (Stripe/Shopify/etc.) côté backend.
+      </p>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>PokéShield</h4>
+          <p>Protections premium pour cartes : sleeves, top loaders, acrylique et classeurs.</p>
+          <p>© <span id="year"></span> — Tous droits réservés</p>
+        </div>
+
+        <div>
+          <h4>Liens</h4>
+          <a href="#produits">Produits</a><br />
+          <a href="#livraison">Livraison</a><br />
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <p>Email : support@pokeshield.example</p>
+          <p>Instagram : @pokeshield</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
