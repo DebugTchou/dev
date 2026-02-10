@@ -1,15 +1,37 @@
-# What is this?
+PokéShield – Boutique de protections Pokémon
 
-The github.dev web-based editor is a lightweight editing experience that runs entirely in your browser. You can navigate files and source code repositories from GitHub, and make and commit code changes.
+Projet web réalisé dans le cadre d’un cours afin de créer une petite boutique en ligne fictive vendant des protections pour cartes Pokémon (sleeves, classeurs, acryliques, consommables).
 
-There are two ways to go directly to a VS Code environment in your browser and start coding:
+Le site permet d’afficher des produits et de simuler un panier d’achat côté navigateur (sans backend ni paiement réel).
 
-* Press the . key on any repository or pull request.
-* Swap `.com` with `.dev` in the URL. For example, this repo https://github.com/github/dev becomes http://github.dev/github/dev
+Fonctionnalités
 
-Preview the gif below to get a quick demo of github.dev in action.
+Affichage dynamique des produits avec JavaScript
 
-![github dev](https://user-images.githubusercontent.com/856858/130119109-4769f2d7-9027-4bc4-a38c-10f297499e8f.gif)
+Ajout / suppression d’articles dans le panier
 
-# Why?
-It’s a quick way to edit and navigate code. It's especially useful if you want to edit multiple files at a time or take advantage of all the powerful code editing features of Visual Studio Code when making a quick change. For more information, see our [documentation](https://github.co/codespaces-editor-help).
+Modification des quantités
+
+Calcul automatique du total
+
+Interface responsive (ordinateur / mobile)
+
+Simulation de commande
+
+Technologies utilisées
+
+HTML5 : structure du site
+
+CSS3 : mise en page et design
+
+JavaScript (vanilla) : logique du panier et affichage dynamique
+
+Aucune librairie ou framework n’est utilisé.
+
+Lancer le projet
+
+Télécharger ou cloner le projet
+
+Ouvrir le fichier index.html dans un navigateur
+
+Aucune installation nécessaire.
